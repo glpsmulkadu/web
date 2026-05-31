@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — GLPS Mulkadu</title>
+  <meta name="description" content="Admin panel dashboard for GLPS Mulkadu school website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+  <link rel="stylesheet" href="css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body>
+  <!-- Admin Container -->
+  <div class="admin-container">
+    <!-- ============================================
+         SIDEBAR NAVIGATION
+         ============================================ -->
+    <aside class="sidebar" id="sidebar">
+      <!-- Brand -->
+      <div class="sidebar-brand">
+        <div class="emoji">🏫</div>
+        <h2>GLPS Mulkadu</h2>
+      </div>
+
+      <!-- Navigation Menu -->
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#" data-section="overview" class="active">
+            <span class="icon">📊</span>
+            <span>Overview</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-section="announcements">
+            <span class="icon">📢</span>
+            <span>Announcements</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-section="gallery">
+            <span class="icon">🖼️</span>
+            <span>Gallery</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-section="videos">
+            <span class="icon">🎬</span>
+            <span>Videos</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-section="donors">
+            <span class="icon">💝</span>
+            <span>Donors</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-section="staff">
+            <span class="icon">👥</span>
+            <span>Staff</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-section="settings">
+            <span class="icon">⚙️</span>
+            <span>Settings</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- ============================================
+         MAIN CONTENT AREA
+         ============================================ -->
+    <div class="main-content">
+      <!-- Header -->
+      <header class="admin-header">
+        <div class="admin-header-left">
+          <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
+            ☰
+          </button>
+          <div class="header-title">
+            <h1>Admin Panel</h1>
+          </div>
+        </div>
+
+        <div class="admin-header-right">
+          <div class="user-info">
+            <div class="user-avatar">
+              <span id="user-initial">A</span>
+            </div>
+            <div class="user-details">
+              <div class="user-name" id="user-name">Admin</div>
+              <div class="user-role">Administrator</div>
+            </div>
+          </div>
+          <button id="logout-btn" class="form-button" title="Logout">
+            🚪 Logout
+          </button>
+        </div>
+      </header>
+
+      <!-- Loading Screen -->
+      <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading...</div>
+      </div>
+
+      <!-- Dashboard Content -->
+      <div id="dashboard-content" class="dashboard-main" style="display: none;">
+        <!-- ========== OVERVIEW SECTION ========== -->
+        <section id="overview" class="dashboard-section show">
+          <div class="page-title">
+            <span class="icon">📊</span>
+            <span>Dashboard Overview</span>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-label">Total Announcements</div>
+              <div class="stat-number" id="stat-announcements">0</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Gallery Images</div>
+              <div class="stat-number" id="stat-gallery">0</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Videos Uploaded</div>
+              <div class="stat-number" id="stat-videos">0</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Donors</div>
+              <div class="stat-number" id="stat-donors">0</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Staff Members</div>
+              <div class="stat-number" id="stat-staff">0</div>
+            </div>
+          </div>
+
+          <!-- Welcome Card -->
+          <div class="card">
+            <h2>👋 Welcome to the Admin Panel</h2>
+            <p>
+              This is your admin dashboard for managing the GLPS Mulkadu school website. 
+              Use the sidebar navigation to manage announcements, gallery, videos, and staff information.
+            </p>
+
+            <h3 style="margin-top: 24px;">Getting Started</h3>
+            <div style="margin-top: 16px;">
+              <div style="margin-bottom: 12px;">
+                <strong>📢 Announcements</strong>
+                <p>Add and manage school announcements and notices</p>
+              </div>
+              <div style="margin-bottom: 12px;">
+                <strong>🖼️ Gallery</strong>
+                <p>Upload and organize school event photos</p>
+              </div>
+              <div style="margin-bottom: 12px;">
+                <strong>🎬 Videos</strong>
+                <p>Manage school videos and multimedia content</p>
+              </div>
+              <div style="margin-bottom: 12px;">
+                <strong>💝 Donors</strong>
+                <p>Add and manage donor contributions</p>
+              </div>
+              <div style="margin-bottom: 12px;">
+                <strong>👥 Staff</strong>
+                <p>Update staff information and profiles</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info Card -->
+          <div class="card">
+            <h2>ℹ️ About This Panel</h2>
+            <p>
+              This admin panel is built with vanilla HTML, CSS, and JavaScript using Firebase for authentication 
+              and data storage. All changes are saved to the cloud and reflected in real-time on the website.
+            </p>
+            <p style="margin-top: 12px; color: var(--text-muted); font-size: 14px;">
+              <strong>Version:</strong> 1.0.0 | <strong>Last Updated:</strong> May 27, 2026
+            </p>
+          </div>
+        </section>
+
+        <!-- ========== ANNOUNCEMENTS SECTION ========== -->
+        <section id="announcements" class="dashboard-section">
+          <div class="page-title">
+            <span class="icon">📢</span>
+            <span>Announcements</span>
+          </div>
+
+          <div class="card">
+            <h2>Manage Announcements</h2>
+            <p style="color: var(--text-muted);">Create and publish school announcements.</p>
+
+            <!-- Announcement Form -->
+            <form id="announcement-form" class="mt-20" aria-label="Create announcement">
+              <div class="form-group">
+                <label for="announcement-title">Title</label>
+                <input type="text" id="announcement-title" name="title" placeholder="Enter announcement title" required>
+              </div>
+
+              <div class="form-group">
+                <label for="announcement-content">Content</label>
+                <textarea id="announcement-content" name="content" rows="5" placeholder="Write the announcement details..." required style="resize:vertical;"></textarea>
+              </div>
+
+              <div style="display:flex; gap:12px; align-items:center;">
+                <button type="submit" id="publish-btn" class="form-button">
+                  Publish Announcement
+                </button>
+                <div class="text-muted" style="font-size:13px;">Announcements will appear on the public site.</div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Announcements List -->
+          <div class="mt-20">
+            <h3 style="margin-bottom:12px;">Published Announcements</h3>
+
+            <div id="announcements-list" class="stats-grid">
+              <!-- Example announcement card (will be populated dynamically) -->
+              <article class="card announcement-card hidden" data-id="">
+                <h3 class="announcement-title">Sample Announcement Title</h3>
+                <p class="announcement-content">This is a sample announcement content. It describes the notice in brief.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+                  <time class="text-muted" datetime="2026-05-27">May 27, 2026</time>
+                  <button class="form-button" style="background:var(--danger);">Delete</button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== GALLERY SECTION ========== -->
+        <section id="gallery" class="dashboard-section">
+          <div class="page-title">
+            <span class="icon">🖼️</span>
+            <span>Gallery Management</span>
+          </div>
+
+          <div class="card">
+            <h2>Manage Gallery</h2>
+            <p style="color: var(--text-muted);">
+              Create photo collections for the website gallery.
+            </p>
+
+            <form id="gallery-form" class="mt-20" aria-label="Add gallery collection">
+              <div class="form-group">
+                <label for="gallery-title">Title</label>
+                <input type="text" id="gallery-title" name="title" placeholder="Enter collection title" required>
+              </div>
+
+              <div class="form-group">
+                <label for="gallery-description">Description</label>
+                <textarea id="gallery-description" name="description" rows="4" placeholder="Write a short collection description" required style="resize:vertical;"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="gallery-cover-image">Cover Image</label>
+                <input type="file" id="gallery-cover-image" name="coverImage" accept="image/*" required>
+              </div>
+
+              <div class="form-group">
+                <label for="gallery-images">Gallery Images</label>
+                <input type="file" id="gallery-images" name="images" accept="image/*" multiple required>
+              </div>
+
+              <button type="submit" id="add-gallery-btn" class="form-button">
+                Add Gallery Collection
+              </button>
+            </form>
+          </div>
+
+          <div class="card mt-20">
+            <h3>Published Gallery Collections</h3>
+            <div id="gallery-list" class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 20px;">
+              <!-- Gallery collection cards will appear here -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== VIDEOS SECTION ========== -->
+        <section id="videos" class="dashboard-section">
+          <div class="page-title">
+            <span class="icon">🎬</span>
+            <span>Videos</span>
+          </div>
+
+          <div class="card">
+            <h2>Manage Videos</h2>
+            <p style="color: var(--text-muted);">
+              Add and publish YouTube videos for the website.
+            </p>
+
+            <form id="video-form" class="mt-20" aria-label="Add video">
+              <div class="form-group">
+                <label for="video-title">Video Title</label>
+                <input type="text" id="video-title" name="title" placeholder="Enter video title" required>
+              </div>
+
+              <div class="form-group">
+                <label for="video-description">Description</label>
+                <textarea id="video-description" name="description" rows="4" placeholder="Write a short video description" required style="resize:vertical;"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="video-url">YouTube URL</label>
+                <input type="url" id="video-url" name="youtubeURL" placeholder="https://youtube.com/watch?v=..." required>
+                <p class="text-muted" style="margin-top: 8px; font-size: 13px;">
+                  Supported links: <strong>youtube.com/watch?v=</strong> or <strong>youtu.be/</strong>
+                </p>
+              </div>
+
+              <button type="submit" id="publish-video-btn" class="form-button">
+                Publish Video
+              </button>
+            </form>
+          </div>
+
+          <div class="card mt-20">
+            <h3>Published Videos</h3>
+            <div id="videos-list" class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 20px;">
+              <!-- Video cards will appear here -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== DONORS SECTION ========== -->
+        <section id="donors" class="dashboard-section">
+          <div class="page-title">
+            <span class="icon">💝</span>
+            <span>Donors</span>
+          </div>
+
+          <div class="card">
+            <h2>Manage Donors</h2>
+            <p style="color: var(--text-muted);">
+              Add and manage donor contributions for the website.
+            </p>
+
+            <form id="donor-form" class="mt-20" aria-label="Add donor">
+              <div class="form-group">
+                <label for="donor-name">Donor Name</label>
+                <input type="text" id="donor-name" name="name" placeholder="Enter donor name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="donor-amount">Amount</label>
+                <input type="number" id="donor-amount" name="amount" min="0" step="1" placeholder="Enter donation amount" required>
+              </div>
+
+              <div class="form-group">
+                <label for="donor-purpose">Purpose</label>
+                <input type="text" id="donor-purpose" name="purpose" placeholder="Enter donation purpose" required>
+              </div>
+
+              <div class="form-group">
+                <label for="donor-date">Date</label>
+                <input type="date" id="donor-date" name="date" required>
+              </div>
+
+              <button type="submit" id="add-donor-btn" class="form-button">
+                Add Donor
+              </button>
+            </form>
+          </div>
+
+          <div class="card mt-20">
+            <h3>Published Donors</h3>
+            <div id="donors-list" class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 20px;">
+              <!-- Donor cards will appear here -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== STAFF SECTION ========== -->
+        <section id="staff" class="dashboard-section">
+          <div class="page-title">
+            <span class="icon">👥</span>
+            <span>Staff Management</span>
+          </div>
+
+          <div class="card">
+            <h2>Staff Directory</h2>
+            <p style="color: var(--text-muted);">
+              Add and manage staff profiles for the school website.
+            </p>
+
+            <form id="staff-form" class="mt-20" aria-label="Add staff member">
+              <div class="form-group">
+                <label for="staff-name">Staff Name</label>
+                <input type="text" id="staff-name" name="name" placeholder="Enter staff name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="staff-designation">Designation</label>
+                <input type="text" id="staff-designation" name="designation" placeholder="Enter designation" required>
+              </div>
+
+              <div class="form-group">
+                <label for="staff-photo">Staff Photo</label>
+                <input type="file" id="staff-photo" name="photo" accept="image/*" required>
+                <div style="margin-top: 12px; display: flex; justify-content: center;">
+                  <img id="staff-preview" src="" alt="Staff photo preview" style="display: none; width: 100%; max-width: 220px; border-radius: 16px; border: 1px solid var(--border); object-fit: cover;" />
+                </div>
+              </div>
+
+              <button type="submit" id="add-staff-btn" class="form-button">
+                Add Staff Member
+              </button>
+            </form>
+          </div>
+
+          <div class="card">
+            <h3>Published Staff Members</h3>
+            <div id="staff-list" class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 20px;">
+              <!-- Staff cards will be rendered here -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== SETTINGS SECTION ========== -->
+        <section id="settings" class="dashboard-section">
+          <div class="page-title">
+            <span class="icon">⚙️</span>
+            <span>Settings</span>
+          </div>
+
+          <div class="card">
+            <h2>Admin Settings</h2>
+            <p style="color: var(--text-muted);">
+              Coming soon: Configure admin panel settings
+            </p>
+            <div style="margin-top: 20px; padding: 20px; background: rgba(212, 147, 13, 0.1); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
+              <p>
+                <strong>Next Features:</strong> Change password, manage permissions, configure notifications.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module">
+    import { 
+      initDashboard, 
+      protectDashboardPage, 
+      setupSidebarToggle, 
+      setupNavigation 
+    } from '../admin/js/dashboard.js';
+
+    // ============================================
+    // DASHBOARD INITIALIZATION
+    // ============================================
+
+    // Protect this page - redirect if not logged in
+    protectDashboardPage();
+
+    // Initialize dashboard on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      try {
+        // Set up all dashboard features
+        initDashboard();
+        setupSidebarToggle();
+        setupNavigation();
+
+        console.log('✅ Dashboard initialized successfully');
+      } catch (error) {
+        console.error('Dashboard initialization error:', error);
+      }
+    });
+  </script>
+</body>
+</html>
