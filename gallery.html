@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — GLPS Mulkadu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <script>
+
+    </script>
+
+    <!-- ========== Navbar ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img class="nav-logo-img" src="images/logo.png" alt="GLPS Mulkadu Logo">
+                <div class="nav-logo-text">
+                    GLPS Mulkadu
+                    <small data-en="Govt. Lower Primary School" data-kn="ಸರಕಾರಿ ಕಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ">Govt. Lower Primary School</small>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" data-en="Home" data-kn="ಮುಖಪುಟ">Home</a>
+                <a href="about.html" data-en="About" data-kn="ನಮ್ಮ ಬಗ್ಗೆ">About</a>
+                <a href="admissions.html" data-en="Admissions" data-kn="ಪ್ರವೇಶ">Admissions</a>
+                <a href="staff.html" data-en="Staff" data-kn="ಸಿಬ್ಬಂದಿ">Staff</a>
+                <a href="gallery.html" class="active" data-en="Photos" data-kn="ಛಾಯಾಚಿತ್ರ">Photos</a>
+                <a href="videos.html" data-en="Videos" data-kn="ವೀಡಿಯೊ">Videos</a>
+                <a href="announcements.html" data-en="Notices" data-kn="ಸೂಚನೆಗಳು">Notices</a>
+                <a href="donors.html" data-en="Donors" data-kn="ದಾನಿಗಳು">Donors</a>
+            </div>
+            <div class="nav-right">
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="kn">ಕನ್</button>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== Mobile Nav ========== -->
+    <div class="mobile-nav" id="mobileNav">
+         <a href="index.html" data-en="Home" data-kn="ಮುಖಪುಟ">Home</a>
+         <a href="about.html" data-en="About" data-kn="ನಮ್ಮ ಬಗ್ಗೆ">About</a>
+         <a href="admissions.html" data-en="Admissions" data-kn="ಪ್ರವೇಶ">Admissions</a>
+         <a href="staff.html" data-en="Staff" data-kn="ಸಿಬ್ಬಂದಿ">Staff</a>
+         <a href="gallery.html" data-en="Photos" data-kn="ಛಾಯಾಚಿತ್ರ">Photos</a>
+         <a href="videos.html" data-en="Videos" data-kn="ವೀಡಿಯೊ">Videos</a>
+         <a href="announcements.html" data-en="Notices" data-kn="ಸೂಚನೆಗಳು">Notices</a>
+         <a href="donors.html" data-en="Donors" data-kn="ದಾನಿಗಳು">Donors</a>
+        <div class="lang-toggle">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="kn">ಕನ್</button> 
+        </div>
+    </div>
+
+    <!-- ========== Page Header ========== -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-en="Photo Gallery" data-kn="ಛಾಯಾಚಿತ್ರ ಗ್ಯಾಲರಿ">Photo Gallery</h1>
+            <p data-en="Capturing moments from our school events and activities" data-kn="ನಮ್ಮ ಶಾಲೆಯ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಚಟುವಟಿಕೆಗಳ ಕ್ಷಣಗಳನ್ನು ಸೆರೆಹಿಡಿಯುವುದು">Capturing moments from our school events and activities</p>
+        </div>
+    </section>
+
+    <!-- ========== Collections View (default) ========== -->
+    <section class="section" id="collectionsView">
+        <div class="container">
+            <div class="gallery-grid" id="collectionsGrid">
+                <!-- Collection cards injected by JS -->
+            </div>
+        </div>
+    </section>
+
+  <!-- ========== GALLERY ========== -->
+
+  <!-- ✏️ HOW TO ADD A NEW PHOTO:
+       1. Place your image file in the /images/ folder
+       2. Copy one of the gallery-item divs below
+       3. Change the src to your image path (e.g., images/my-photo.jpg)
+       4. Change the alt and caption text
+       5. Save — done!
+
+       ✏️ HOW TO USE ONLINE IMAGES (like from Google Drive):
+       Replace the src with the direct image URL.
+       Example: src="https://drive.google.com/uc?export=view&id=YOUR_FILE_ID"
+  -->
+
+    <!-- ========== Collection Detail View (hidden) ========== -->
+    <section class="section" id="collectionDetailView" style="display:none;">
+        <div class="container">
+            <button class="btn btn-outline btn-sm back-to-collections" id="backBtn">
+                <iconify-icon icon="lucide:arrow-left"></iconify-icon>
+                <span data-en="Back to Collections" data-kn="ಸಂಗ್ರಹಗಳಿಗೆ ಹಿಂತಿರುಗಿ">Back to Collections</span>
+            </button>
+            <h2 id="collectionDetailTitle" style="margin-top:20px;"></h2>
+            <p id="collectionDetailCount" style="color:var(--text-muted);font-size:0.95rem;margin-bottom:32px;"></p>
+            <div class="gallery-grid" id="collectionImagesGrid">
+                <!-- Images injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Image Modal ========== -->
+    <div class="modal-overlay" id="imageModal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <img src="" alt="Gallery Image" id="modalImage">
+        <button class="modal-nav modal-prev" id="modalPrev">
+            <iconify-icon icon="lucide:chevron-left"></iconify-icon>
+        </button>
+        <button class="modal-nav modal-next" id="modalNext">
+            <iconify-icon icon="lucide:chevron-right"></iconify-icon>
+        </button>
+        <div class="modal-counter" id="modalCounter"></div>
+    </div>
+
+    <!-- ========== Footer ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h4>GLPS Mulkadu</h4>
+                    <p>Government Lower Primary School, Mulkadu. Dedicated to providing quality education and nurturing young minds for a brighter future.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                     <a href="index.html" data-en="Home" data-kn="ಮುಖಪುಟ">Home</a>
+                     <a href="about.html" data-en="About Us" data-kn="ನಮ್ಮ ಬಗ್ಗೆ">About Us</a>
+                     <a href="admissions.html" data-en="Admissions" data-kn="ಪ್ರವೇಶ">Admissions</a>
+                     <a href="staff.html" data-en="Staff" data-kn="ಸಿಬ್ಬಂದಿ">Staff</a>
+                     <a href="announcements.html" data-en="Notices" data-kn="ಸೂಚನೆಗಳು">Notices</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <iconify-icon icon="lucide:map-pin"></iconify-icon>
+                        <span>Mulkadu, Karnataka, India</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <iconify-icon icon="lucide:phone"></iconify-icon>
+                        <span>+91 99002 82325</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <iconify-icon icon="lucide:mail"></iconify-icon>
+                        <span>glpsmulkaduyellare@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 GLPS Mulkadu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== WhatsApp Float ========== -->
+    <a href="https://wa.me/919900282325" class="whatsapp-float" target="_blank" rel="noopener">
+        <iconify-icon icon="lucide:message-circle"></iconify-icon>
+    </a>
+
+    <!-- ========== Back to Top ========== -->
+    <button class="back-to-top" id="backToTop">
+        <iconify-icon icon="lucide:chevron-up"></iconify-icon>
+    </button>
+
+    <!-- ========== Scripts ========== -->
+    <script type="module">
+    import { fetchPublicGalleryCollections } from './js/public-data.js';
+
+    /* ============================================
+       GALLERY — Collection-based Display
+       ============================================ */
+
+    // ---- State ----
+    let collections = [];
+    let currentLang = 'en';
+    let currentCollection = null;
+    let currentImageIndex = 0;
+    let currentImages = [];
+
+    // ---- DOM Elements ----
+    const collectionsView = document.getElementById('collectionsView');
+    const collectionDetailView = document.getElementById('collectionDetailView');
+    const collectionsGrid = document.getElementById('collectionsGrid');
+    const collectionImagesGrid = document.getElementById('collectionImagesGrid');
+    const collectionDetailTitle = document.getElementById('collectionDetailTitle');
+    const collectionDetailCount = document.getElementById('collectionDetailCount');
+    const backBtn = document.getElementById('backBtn');
+    const imageModal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+    const modalPrev = document.getElementById('modalPrev');
+    const modalNext = document.getElementById('modalNext');
+    const modalCounter = document.getElementById('modalCounter');
+
+    function getCollectionTitle(col) {
+        return currentLang === 'kn' && col.titleKn ? col.titleKn : col.title;
+    }
+
+    function getCollectionThumbnail(col) {
+        return col.coverImageUrl || (col.images && col.images[0]) || '';
+    }
+
+    async function loadCollections() {
+        collectionsGrid.innerHTML = '<p>Loading gallery...</p>';
+
+        try {
+            collections = await fetchPublicGalleryCollections();
+            renderCollections();
+        } catch (error) {
+            console.error('Gallery collections load error:', error);
+            collections = [];
+            collectionsGrid.innerHTML = '<p>Could not load gallery collections.</p>';
+        }
+    }
+
+    // ---- Render Collection Cards ----
+    function renderCollections() {
+        collectionsGrid.innerHTML = '';
+
+        if (collections.length === 0) {
+            collectionsGrid.innerHTML = '<p>No gallery collections available yet.</p>';
+            return;
+        }
+
+        collections.forEach(function(col) {
+            var card = document.createElement('div');
+            card.className = 'gallery-item collection-card fade-up';
+            card.setAttribute('data-collection', col.id);
+
+            var title = getCollectionTitle(col);
+            var thumbnail = getCollectionThumbnail(col);
+            var countText = currentLang === 'kn'
+                ? col.images.length + ' ಫೋಟೋಗಳು'
+                : col.images.length + ' Photos';
+
+            card.innerHTML =
+                '<div class="collection-thumb">' +
+                    '<img src="' + thumbnail + '" alt="' + title + '" loading="lazy">' +
+                    '<span class="collection-badge">' +
+                        '<iconify-icon icon="lucide:images" width="14"></iconify-icon>' +
+                        col.images.length +
+                    '</span>' +
+                '</div>' +
+                '<div class="collection-info">' +
+                    '<div class="collection-folder-icon">' +
+                        '<iconify-icon icon="lucide:folder"></iconify-icon>' +
+                    '</div>' +
+                    '<div class="collection-info-text">' +
+                        '<h3 class="collection-title">' + title + '</h3>' +
+                        '<span class="collection-count">' + countText + '</span>' +
+                    '</div>' +
+                '</div>';
+
+            card.addEventListener('click', function() {
+                openCollection(col);
+            });
+
+            collectionsGrid.appendChild(card);
+        });
+
+        // Trigger fade-up animations
+        requestAnimationFrame(function() {
+            var items = document.querySelectorAll('#collectionsGrid .fade-up');
+            items.forEach(function(el, i) {
+                setTimeout(function() {
+                    el.classList.add('visible');
+                }, i * 80);
+            });
+        });
+    }
+
+    // ---- Open Collection Detail ----
+    function openCollection(col) {
+        currentCollection = col;
+        var title = getCollectionTitle(col);
+        var countText = currentLang === 'kn'
+            ? col.images.length + ' ಫೋಟೋಗಳು'
+            : col.images.length + ' Photos';
+
+        collectionDetailTitle.textContent = title;
+        collectionDetailCount.textContent = countText;
+
+        collectionImagesGrid.innerHTML = '';
+        col.images.forEach(function(imgSrc, idx) {
+            var item = document.createElement('div');
+            item.className = 'gallery-item fade-up';
+            item.innerHTML =
+                '<img src="' + imgSrc + '" alt="' + title + ' — ' + (idx + 1) + '" loading="lazy">' +
+                '<div class="gallery-caption">' + title + ' — ' + (idx + 1) + '</div>';
+
+            item.addEventListener('click', function() {
+                openModal(col.images, idx);
+            });
+
+            collectionImagesGrid.appendChild(item);
+        });
+
+        // Switch views
+        collectionsView.style.display = 'none';
+        collectionDetailView.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Trigger fade-up animations for detail images
+        requestAnimationFrame(function() {
+            var items = document.querySelectorAll('#collectionImagesGrid .fade-up');
+            items.forEach(function(el, i) {
+                setTimeout(function() {
+                    el.classList.add('visible');
+                }, i * 80);
+            });
+        });
+    }
+
+    // ---- Back to Collections ----
+    backBtn.addEventListener('click', function() {
+        collectionDetailView.style.display = 'none';
+        collectionsView.style.display = 'block';
+        currentCollection = null;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ---- Modal: Open ----
+    function openModal(images, index) {
+        currentImages = images;
+        currentImageIndex = index;
+        updateModalImage();
+        imageModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // ---- Modal: Update Image ----
+    function updateModalImage() {
+        modalImage.src = currentImages[currentImageIndex];
+        modalCounter.textContent = (currentImageIndex + 1) + ' / ' + currentImages.length;
+        modalPrev.style.display = currentImages.length > 1 ? 'flex' : 'none';
+        modalNext.style.display = currentImages.length > 1 ? 'flex' : 'none';
+    }
+
+    // ---- Modal: Close ----
+    function closeModal() {
+        imageModal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    imageModal.addEventListener('click', function(e) {
+        if (e.target === imageModal) closeModal();
+    });
+
+    // ---- Modal: Prev / Next ----
+    modalPrev.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+        updateModalImage();
+    });
+    modalNext.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+        updateModalImage();
+    });
+
+    // ---- Keyboard Navigation ----
+    document.addEventListener('keydown', function(e) {
+        if (!imageModal.classList.contains('open')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') {
+            currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+            updateModalImage();
+        }
+        if (e.key === 'ArrowRight') {
+            currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+            updateModalImage();
+        }
+    });
+
+    // ---- Language Switching ----
+// ---- Language Switching ----
+function setLanguage(lang) {
+
+    currentLang = lang;
+
+    document.body.classList.toggle('lang-kn', lang === 'kn');
+
+    // Update active buttons
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    // Update all text elements
+    document.querySelectorAll('[data-en]').forEach(function(el) {
+
+        if (lang === 'kn' && el.dataset.kn) {
+            el.textContent = el.dataset.kn;
+        } else {
+            el.textContent = el.dataset.en;
+        }
+
+    });
+
+    // Re-render collections
+    renderCollections();
+
+    // Update opened collection
+    if (currentCollection) {
+
+        var title = getCollectionTitle(currentCollection);
+
+        var countText = lang === 'kn'
+            ? currentCollection.images.length + ' ಫೋಟೋಗಳು'
+            : currentCollection.images.length + ' Photos';
+
+        collectionDetailTitle.textContent = title;
+        collectionDetailCount.textContent = countText;
+
+        // Update captions
+        var captions = collectionImagesGrid.querySelectorAll('.gallery-caption');
+
+        captions.forEach(function(cap, idx) {
+            cap.textContent = title + ' — ' + (idx + 1);
+        });
+    }
+}
+
+// Language button click
+document.querySelectorAll('.lang-btn').forEach(function(btn) {
+
+    btn.addEventListener('click', function() {
+        setLanguage(btn.dataset.lang);
+    });
+
+});
+
+    // ---- Navbar Scroll Effect ----
+    var navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
+        navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // ---- Mobile Menu Toggle ----
+    var menuToggle = document.getElementById('menuToggle');
+    var mobileNav = document.getElementById('mobileNav');
+    menuToggle.addEventListener('click', function() {
+        menuToggle.classList.toggle('open');
+        mobileNav.classList.toggle('open');
+    });
+
+    // ---- Back to Top ----
+    var backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+        backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+	    // ---- Initialize ----
+	    loadCollections();
+	    </script>
+
+</body>
+</html>

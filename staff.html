@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Staff — GLPS Mulkadu</title>
+  <meta name="description" content="Meet the dedicated teachers of Government Lower Primary School Mulkadu.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏫</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img class="nav-logo-img" src="images/logo.png" alt="GLPS Mulkadu Logo">
+        <div class="nav-logo-text">
+          GLPS Mulkadu
+          <small data-en="Govt. Lower Primary School" data-kn="ಸರಕಾರಿ ಕಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ">Govt. Lower Primary School</small>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" data-en="Home" data-kn="ಮುಖಪುಟ">Home</a>
+        <a href="about.html" data-en="About" data-kn="ನಮ್ಮ ಬಗ್ಗೆ">About</a>
+        <a href="admissions.html" data-en="Admissions" data-kn="ಪ್ರವೇಶ">Admissions</a>
+        <a href="staff.html" class="active" data-en="Staff" data-kn="ಸಿಬ್ಬಂದಿ">Staff</a>
+        <a href="gallery.html" data-en="Photos" data-kn="ಛಾಯಾಚಿತ್ರ">Photos</a>
+        <a href="videos.html" data-en="Videos" data-kn="ವೀಡಿಯೊ">Videos</a>
+        <a href="announcements.html" data-en="Notices" data-kn="ಸೂಚನೆಗಳು">Notices</a>
+        <a href="donors.html" data-en="Donors" data-kn="ದಾನಿಗಳು">Donors</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+          <button class="lang-btn" data-lang="kn" onclick="setLanguage('kn')">ಕನ್</button>
+        </div>
+        <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="index.html" data-en="Home" data-kn="ಮುಖಪುಟ">Home</a>
+    <a href="about.html" data-en="About" data-kn="ನಮ್ಮ ಬಗ್ಗೆ">About</a>
+    <a href="admissions.html" data-en="Admissions" data-kn="ಪ್ರವೇಶ">Admissions</a>
+    <a href="staff.html" data-en="Staff" data-kn="ಸಿಬ್ಬಂದಿ">Staff</a>
+    <a href="gallery.html" data-en="Photos" data-kn="ಛಾಯಾಚಿತ್ರ">Photos</a>
+    <a href="videos.html" data-en="Videos" data-kn="ವೀಡಿಯೊ">Videos</a>
+    <a href="announcements.html" data-en="Notices" data-kn="ಸೂಚನೆಗಳು">Notices</a>
+    <a href="donors.html" data-en="Donors" data-kn="ದಾನಿಗಳು">Donors</a>
+    <div class="lang-toggle-mobile">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="kn" onclick="setLanguage('kn')">ಕನ್</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <div class="page-header">
+    <div class="container">
+      <h1 data-en="Our Staff" data-kn="ನಮ್ಮ ಸಿಬ್ಬಂದಿ">Our Staff</h1>
+      <p data-en="Meet our dedicated teachers who nurture young minds every day" data-kn="ಪ್ರತಿದಿನ ಯುವ ಮನಸ್ಸುಗಳನ್ನು ಪೋಷಿಸುವ ನಮ್ಮ ಸಮರ್ಪಿತ ಶಿಕ್ಷಕರನ್ನು ಭೇಟಿಯಾಗಿ">Meet our dedicated teachers who nurture young minds every day</p>
+    </div>
+  </div>
+
+  <!-- ========== STAFF GRID ========== -->
+  <!-- ✏️ TO ADD/EDIT STAFF:
+       Open js/main.js and find the "staff" array.
+       Add or edit entries there. The page will update automatically. -->
+  <section class="content-section">
+    <div class="container">
+      <div id="staff-grid" class="staff-grid">
+        <!-- Rendered by JavaScript from js/main.js -->
+      </div>
+
+      <!-- Note for editors -->
+      <div class="neu-card-flat" style="margin-top:40px; text-align:center; border:1px dashed var(--border); padding:20px;">
+        <p style="color:var(--text-muted); font-size:0.85rem;">
+          <span class="iconify" data-icon="lucide:info" data-width="14" style="vertical-align:middle;"></span>
+          <span data-en="This information is as of April 1 2026" data-kn="ಈ ಮಾಹಿತಿ 2026ರ ಏಪ್ರಿಲ್ 1ರ ಸ್ಥಿತಿಗೆ ಅನುಗುಣವಾಗಿದೆ.">This information is as of April 1 2026</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h4 data-en="GLPS Mulkadu" data-kn="ಜಿಎಲ್ಪಿಎಸ್ ಮುಲ್ಕಾಡು">GLPS Mulkadu</h4>
+          <p data-en="Government Lower Primary School Mulkadu, Karnataka. Committed to providing quality education and holistic development for every child." data-kn="ಸರಕಾರಿ ಕಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ ಮುಲ್ಕಾಡು, ಕರ್ನಾಟಕ. ಪ್ರತಿ ಮಗುವಿಗೆ ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣ ಮತ್ತು ಸಮಗ್ರ ಅಭಿವೃದ್ಧಿಯನ್ನು ಒದಗಿಸಲು ಬದ್ಧವಾಗಿದೆ.">Government Lower Primary School Mulkadu, Karnataka. Committed to providing quality education and holistic development for every child.</p>
+        </div>
+        <div class="footer-links">
+          <h4 data-en="Quick Links" data-kn="ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು">Quick Links</h4>
+          <a href="index.html" data-en="Home" data-kn="ಮುಖಪುಟ">Home</a>
+          <a href="about.html" data-en="About Us" data-kn="ನಮ್ಮ ಬಗ್ಗೆ">About Us</a>
+          <a href="admissions.html" data-en="Admissions" data-kn="ಪ್ರವೇಶ">Admissions</a>
+          <a href="staff.html" data-en="Staff" data-kn="ಸಿಬ್ಬಂದಿ">Staff</a>
+          <a href="announcements.html" data-en="Notices" data-kn="ಸೂಚನೆಗಳು">Notices</a>
+        </div>
+        <div class="footer-links">
+          <h4 data-en="Contact" data-kn="ಸಂಪರ್ಕ">Contact</h4>
+          <div class="footer-contact-item">
+            <span class="iconify" data-icon="lucide:phone" data-width="16"></span>
+            <a href="tel:9900282325">9900282325</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="iconify" data-icon="lucide:mail" data-width="16"></span>
+            <a href="mailto:glpsmulkaduyellare@gmail.com">glpsmulkaduyellare@gmail.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="iconify" data-icon="lucide:map-pin" data-width="16"></span>
+            <span data-en="Mulkadu, Karnataka" data-kn="ಮುಲ್ಕಾಡು, ಕರ್ನಾಟಕ">Mulkadu, Karnataka</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 GLPS Mulkadu. <span data-en="All rights reserved." data-kn="ಎಲ್ಲ ಹಕ್ಕುಗಳು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.">All rights reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919900282325" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <span class="iconify" data-icon="lucide:message-circle" data-width="28"></span>
+  </a>
+  <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+    <span class="iconify" data-icon="lucide:chevron-up" data-width="22"></span>
+  </button>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
