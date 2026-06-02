@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Redirect to dashboard
       setTimeout(() => {
-        window.location.href = 'web/admin/dashboard.html';
+        window.location.href = './web/admin/dashboard.html';
       }, 400);
     } catch (err) {
       showAlert(err.message || 'Login failed. Please try again.', 'error');
