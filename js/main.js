@@ -30,8 +30,8 @@ const announcements = [
     date: "2025-06-01",
     title: "Give your child a brighter future — enroll them in our school today!",
     titleKn: "ನಿಮ್ಮ ಮಕ್ಕಳ ಉತ್ತಮ ಭವಿಷ್ಯಕ್ಕಾಗಿ ಇಂದು ನಮ್ಮ ಶಾಲೆಯಲ್ಲಿ ಪ್ರವೇಶ ಮಾಡಿಸಿ!",
-    content: "Give your child the gift of quality education and a brighter future.Our school provides a caring environment, dedicated teachers, and opportunities for every child to grow and succeed.Admissions are now open — enroll your child today!",
-    contentKn: "ಉತ್ತಮ ಶಿಕ್ಷಣದ ಮೂಲಕ ನಿಮ್ಮ ಮಕ್ಕಳಿಗೆ ಉಜ್ವಲ ಭವಿಷ್ಯವನ್ನು ನೀಡಿರಿ.ನಮ್ಮ ಶಾಲೆಯಲ್ಲಿ ಉತ್ತಮ ಶಿಕ್ಷಕರು, ಸ್ನೇಹಪೂರ್ಣ ವಾತಾವರಣ ಹಾಗೂ ಮಕ್ಕಳ ಸಮಗ್ರ ಬೆಳವಣಿಗೆಗೆ ಉತ್ತಮ ಅವಕಾಶಗಳಿವೆ.ಪ್ರವೇಶ ಪ್ರಕ್ರಿಯೆ ಆರಂಭವಾಗಿದೆ — ಇಂದುಲೇ ನಿಮ್ಮ ಮಕ್ಕಳಿಗೆ ಪ್ರವೇಶ ಮಾಡಿಸಿ!",
+    content: "Give your child the gift of quality education and a brighter future.Our school provides a caring environment, dedicated teachers, and opportunities for every child to grow and succee[...]",
+    contentKn: "ಉತ್ತಮ ಶಿಕ್ಷಣದ ಮೂಲಕ ನಿಮ್ಮ ಮಕ್ಕಳಿಗೆ ಉಜ್ವಲ ಭವಿಷ್ಯವನ್ನು ನೀಡಿರಿ.ನಮ್ಮ ಶಾ[...]",
     urgent: false
   }
   
@@ -475,6 +475,15 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Set language
   setLanguage(currentLang);
+  
+  // Attach event listeners to language buttons
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var lang = btn.getAttribute('data-lang');
+      setLanguage(lang);
+    });
+  });
   
   // Scroll handler
   window.addEventListener('scroll', handleScroll);
