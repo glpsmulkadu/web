@@ -25,7 +25,7 @@ export function protectDashboardPage() {
   onAuthChange((user) => {
     if (!user) {
       console.log('🚫 Access denied - redirecting to login');
-      window.location.href = '/admin/login.html';
+      window.location.href = './login.html';
     } else {
       console.log('✅ Access granted for:', user.email);
       showDashboardContent();
@@ -114,7 +114,7 @@ function showDashboardContent() {
  */
 function redirectToLogin() {
   console.log('🚫 Session ended - redirecting to login');
-  window.location.href = '/admin/login.html';
+  window.location.href = './login.html';
 }
 
 /**
@@ -137,7 +137,7 @@ function setupLogoutButton() {
         await adminLogout();
         
         // Redirect to login (auth state change will handle this)
-        window.location.href = '/admin/login.html';
+        window.location.href = './login.html';
       } catch (error) {
         console.error('Logout error:', error);
         logoutBtn.disabled = false;
